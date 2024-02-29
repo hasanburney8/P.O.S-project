@@ -370,7 +370,7 @@ class _registerScreenState extends State<registerScreen> {
                                                                         //
                                                                         GridView.builder(
                                                                           gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                                                                            crossAxisCount: 3,
+                                                                            crossAxisCount: 2,
                                                                             crossAxisSpacing: 2.0, // Adjust the cross axis spacing
                                                                             mainAxisSpacing: 2.0,// Adjust the cross axis count as needed
                                                                           ),
