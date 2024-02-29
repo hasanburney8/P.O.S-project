@@ -367,9 +367,23 @@ class _registerScreenState extends State<registerScreen> {
                                                                     child: TabBarView(
                                                                       children: [
                                                                         // Container(child: Center(child: Text('Content for Main Dining Room'),),),
-                                                                        ProfileWidget(
-                                                                          name: 'Test Jhon',
-                                                                          level: '2',
+                                                                        //
+                                                                        GridView.builder(
+                                                                          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                                                                            crossAxisCount: 3,
+                                                                            crossAxisSpacing: 2.0, // Adjust the cross axis spacing
+                                                                            mainAxisSpacing: 2.0,// Adjust the cross axis count as needed
+                                                                          ),
+                                                                          itemCount: 4, // Adjust the itemCount based on the number of ProfileWidgets
+                                                                          itemBuilder: (BuildContext context, int index) {
+                                                                            // List of names for ProfileWidgets
+                                                                            List<String> names = ['Test Jhon', 'Test', 'Jhon', 'Testfd'];
+
+                                                                            return ProfileWidget(
+                                                                              name: names[index], // Get the name from the list based on the index
+                                                                              level: '2',
+                                                                            );
+                                                                          },
                                                                         ),
                                                                         Container(child: Center(child: Text('Content for Backyard'),),),
                                                                         Container(child: Center(child: Text('Content for Patio'),),),
