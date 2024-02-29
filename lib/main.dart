@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:pos_project/PlaceOrderScreen.dart';
+import 'package:pos_project/Utils/shiftButton.dart';
 import 'package:pos_project/demoruns.dart';
-import 'package:pos_project/register.dart';
+import 'package:pos_project/dialougebox.dart';
+import 'package:pos_project/loginScreen.dart';
+import 'package:pos_project/menuScreen.dart';
 import 'package:pos_project/registerScreen.dart';
 
 void main() {
