@@ -715,6 +715,17 @@ class _registerScreenState extends State<registerScreen> {
                       SizedBox(
                         width: 20,
                       ),
+                      Container(
+                        height: 62,
+                        width: 150,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(5),
+                          color: Colors.blueAccent,
+                        ),
+                        child: GestureDetector(
+                          onTap: (){},
+                        ),
+                      ),
                       CustomButton().type3(
                           text: 'Orders',
                           color: Colors.blueAccent,
