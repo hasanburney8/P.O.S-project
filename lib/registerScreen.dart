@@ -309,14 +309,21 @@ class _registerScreenState extends State<registerScreen> {
                                                             color: Colors.grey.shade200,
                                                           ),
                                                           child: Center(
-                                                            child: Row(
-                                                              mainAxisAlignment: MainAxisAlignment.center, // Center the row horizontally
-                                                              children: [
-                                                                Icon(Icons.close),
-                                                                SizedBox(width: 4), // Add some space between the icon and text
-                                                                Text("Close",style: TextStyle(),),
-                                                              ],
+                                                            child: GestureDetector(
+                                                              onTap: () {
+                                                                // Close the dialog box when the row is tapped
+                                                                Navigator.of(context).pop();
+                                                              },
+                                                              child: Row(
+                                                                mainAxisAlignment: MainAxisAlignment.center,
+                                                                children: [
+                                                                  Icon(Icons.close),
+                                                                  SizedBox(width: 4),
+                                                                  Text("Close"),
+                                                                ],
+                                                              ),
                                                             ),
+
                                                           ),
                                                         ),
                                                       ],
@@ -424,21 +431,6 @@ class _registerScreenState extends State<registerScreen> {
                                                     ],
                                                   ),
                                                 ),
-                                                actions: [
-                                                  TextButton(
-                                                    onPressed: () {
-                                                      Navigator.of(context).pop();
-                                                    },
-                                                    child: Text("Cancel"),
-                                                  ),
-                                                  TextButton(
-                                                    onPressed: () {
-                                                      // Add your logic to add a customer here
-                                                      Navigator.of(context).pop();
-                                                    },
-                                                    child: Text("Ok"),
-                                                  ),
-                                                ],
                                               );
                                             });
                                       },
