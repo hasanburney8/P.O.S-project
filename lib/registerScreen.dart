@@ -853,15 +853,6 @@ class _registerScreenState extends State<registerScreen> {
                           ),
                         ],
                       ),
-
-
-                      CustomButton().type3(
-                          text: 'Orders',
-                          color: Colors.blueAccent,
-                          width: 130,
-                          fontSize: 20,
-                          fontWeight: FontWeight.normal,
-                          onTap: () {}),
                     ],
                   ),
                 ],
