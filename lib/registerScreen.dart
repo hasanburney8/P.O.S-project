@@ -737,7 +737,17 @@ class _registerScreenState extends State<registerScreen> {
                                           children: [
                                                 Center(child: Text("Orders",style: TextStyle(fontSize: 35),)),
                                                 SizedBox(width: w*0.60,),
-                                                Icon(Icons.close,size: 35,),
+                                            GestureDetector(
+                                              onTap: () {
+                                                // Close the dialog box when the icon is tapped
+                                                Navigator.of(context).pop();
+                                              },
+                                              child: Icon(
+                                                Icons.close,
+                                                size: 35,
+                                              ),
+                                            ),
+
 
                                             SizedBox(height: h*0.1,),
                                           ],
@@ -836,21 +846,6 @@ class _registerScreenState extends State<registerScreen> {
                                         ],
                                       ),
                                     ),
-                                    actions: [
-                                      TextButton(
-                                        onPressed: () {
-                                          Navigator.of(context).pop();
-                                        },
-                                        child: Text("Cancel"),
-                                      ),
-                                      TextButton(
-                                        onPressed: () {
-                                          // Add your logic to add a customer here
-                                          Navigator.of(context).pop();
-                                        },
-                                        child: Text("Ok"),
-                                      ),
-                                    ],
                                   );
                                 });
                           },
