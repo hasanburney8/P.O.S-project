@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pos_project/Utils/container.dart';
+import 'package:pos_project/Utils/ordersContainer.dart';
 import 'Utils/button.dart';
 import 'Utils/profileWidget.dart';
 
@@ -734,31 +735,11 @@ class _registerScreenState extends State<registerScreen> {
                                         Row(
                                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                           children: [
-                                            Row(
-                                              children: [
-                                                Center(child: Text("Select Table Type",style: TextStyle(fontSize: 25),)),
-                                                SizedBox(width: w*0.01,),
-                                                Icon(Icons.edit,color: Colors.blueAccent,size: 30,),
-                                                Text("Add/Edit Dining",style: TextStyle(color: Colors.blueAccent,fontSize: 20),),
-                                              ],
-                                            ),
-                                            Container(
-                                              height: h * 0.05,
-                                              width: w * 0.07,
-                                              decoration: BoxDecoration(
-                                                color: Colors.grey.shade200,
-                                              ),
-                                              child: Center(
-                                                child: Row(
-                                                  mainAxisAlignment: MainAxisAlignment.center, // Center the row horizontally
-                                                  children: [
-                                                    Icon(Icons.close),
-                                                    SizedBox(width: 4), // Add some space between the icon and text
-                                                    Text("Close",style: TextStyle(),),
-                                                  ],
-                                                ),
-                                              ),
-                                            ),
+                                                Center(child: Text("Orders",style: TextStyle(fontSize: 35),)),
+                                                SizedBox(width: w*0.60,),
+                                                Icon(Icons.close,size: 35,),
+
+                                            SizedBox(height: h*0.1,),
                                           ],
                                         )
                                     ),
@@ -829,21 +810,14 @@ class _registerScreenState extends State<registerScreen> {
                                                             children: [
                                                               // Container(child: Center(child: Text('Content for Main Dining Room'),),),
                                                               //
-                                                              GridView.builder(
-                                                                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                                                                  crossAxisCount: 3,
-                                                                  crossAxisSpacing: 2.0, // Adjust the cross axis spacing
-                                                                  mainAxisSpacing: 2.0,// Adjust the cross axis count as needed
-                                                                ),
-                                                                itemCount: 4, // Adjust the itemCount based on the number of ProfileWidgets
+                                                              ListView.builder(
+
+                                                                itemCount: 10, // Adjust the itemCount based on the number of ProfileWidgets
                                                                 itemBuilder: (BuildContext context, int index) {
                                                                   // List of names for ProfileWidgets
-                                                                  List<String> names = ['Test Jhon', 'Test', 'Jhon', 'Testfd'];
+                                                                  List<String> orderNumber = ['CPBT-01032024-00000045','sdffdsf','CPBT-01032024-00000045','sdffdsf','CPBT-01032024-00000045','sdffdsf','CPBT-01032024-00000045','sdffdsf',];
 
-                                                                  return ProfileWidget(
-                                                                    name: names[index], // Get the name from the list based on the index
-                                                                    level: '2',
-                                                                  );
+                                                                  return ordersContainer(orderNumber: orderNumber[index], time: '10 hours ago', orderType: 'sdf', totalAmount: 'sdf', customer: 'sdf');
                                                                 },
                                                               ),
                                                               Container(child: Center(child: Text('Content for Backyard'),),),
