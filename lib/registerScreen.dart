@@ -711,7 +711,8 @@ class _registerScreenState extends State<registerScreen> {
                           width: 190,
                           fontSize: 20,
                           fontWeight: FontWeight.normal,
-                          onTap: () {}),
+                          onTap: () {}
+                          ),
                       SizedBox(
                         width: 20,
                       ),
@@ -723,7 +724,162 @@ class _registerScreenState extends State<registerScreen> {
                           color: Colors.blueAccent,
                         ),
                         child: GestureDetector(
-                          onTap: (){},
+                          onTap: () {
+                            showDialog(
+                                context: context,
+                                builder: (BuildContext context){
+                                  return AlertDialog(
+                                    title: Container(
+                                        child:
+                                        Row(
+                                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                          children: [
+                                            Row(
+                                              children: [
+                                                Center(child: Text("Select Table Type",style: TextStyle(fontSize: 25),)),
+                                                SizedBox(width: w*0.01,),
+                                                Icon(Icons.edit,color: Colors.blueAccent,size: 30,),
+                                                Text("Add/Edit Dining",style: TextStyle(color: Colors.blueAccent,fontSize: 20),),
+                                              ],
+                                            ),
+                                            Container(
+                                              height: h * 0.05,
+                                              width: w * 0.07,
+                                              decoration: BoxDecoration(
+                                                color: Colors.grey.shade200,
+                                              ),
+                                              child: Center(
+                                                child: Row(
+                                                  mainAxisAlignment: MainAxisAlignment.center, // Center the row horizontally
+                                                  children: [
+                                                    Icon(Icons.close),
+                                                    SizedBox(width: 4), // Add some space between the icon and text
+                                                    Text("Close",style: TextStyle(),),
+                                                  ],
+                                                ),
+                                              ),
+                                            ),
+                                          ],
+                                        )
+                                    ),
+                                    content: SizedBox(
+                                      height: h*0.6,
+                                      width: w*0.7,
+                                      child:
+                                      Column(
+                                        children: [
+                                          Container(
+                                              width: double.infinity,
+                                              child: SizedBox(
+                                                height: h*0.6, // Or any other specific height
+                                                child: Container(
+                                                  child:
+                                                  DefaultTabController(
+                                                    length: 2,
+                                                    child: Column(
+                                                      children: [
+                                                        TabBar(
+                                                          isScrollable: true,
+                                                          tabs: [
+                                                            Tab(child: Text('Open Orders', style: TextStyle(color: Colors.black,fontSize: 20),),),
+                                                            Tab(child: Text('Paid Orders', style: TextStyle(color: Colors.black,fontSize: 20),),),
+
+                                                          ],
+                                                        ),
+                                                        Divider(
+                                                          color: Colors.black12,
+                                                          height: 15,
+                                                        ),
+                                                        TextFormField(
+                                                          // onChanged: onChanged,
+                                                          // controller: controller,
+                                                          // keyboardType: TextInputType.text,
+                                                          // style: GoogleFonts.cabin(color: Colors.black, fontSize: 15),
+                                                          decoration: InputDecoration(
+                                                              contentPadding: const EdgeInsets.symmetric(
+                                                                  vertical: 5.0, horizontal: 15),
+                                                              fillColor: Colors.white,
+                                                              filled: true,
+                                                              border: OutlineInputBorder(
+                                                                borderRadius: BorderRadius.circular(10.0),
+                                                                borderSide: const BorderSide(width: 0.8),
+                                                              ),
+                                                              enabledBorder: OutlineInputBorder(
+                                                                borderRadius: BorderRadius.circular(6.0),
+                                                                borderSide: BorderSide(
+                                                                  width: 1.5,
+                                                                  // color: Theme.of(context).primaryColor,
+                                                                  color: Colors.black38,
+                                                                ),
+                                                              ),
+                                                              suffixIcon: InkWell(
+                                                                  child: Icon(
+                                                                    Icons.qr_code_scanner,
+                                                                    color: Colors.grey.shade800,
+                                                                    size: 30,
+                                                                  )),
+                                                              hintText: 'Scan/Type Order Number',
+                                                              hintStyle: TextStyle(fontSize: 18)),
+                                                        ),
+                                                        SizedBox(
+                                                          height: 15,
+                                                        ),
+                                                        Flexible(
+                                                          child: TabBarView(
+                                                            children: [
+                                                              // Container(child: Center(child: Text('Content for Main Dining Room'),),),
+                                                              //
+                                                              GridView.builder(
+                                                                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                                                                  crossAxisCount: 3,
+                                                                  crossAxisSpacing: 2.0, // Adjust the cross axis spacing
+                                                                  mainAxisSpacing: 2.0,// Adjust the cross axis count as needed
+                                                                ),
+                                                                itemCount: 4, // Adjust the itemCount based on the number of ProfileWidgets
+                                                                itemBuilder: (BuildContext context, int index) {
+                                                                  // List of names for ProfileWidgets
+                                                                  List<String> names = ['Test Jhon', 'Test', 'Jhon', 'Testfd'];
+
+                                                                  return ProfileWidget(
+                                                                    name: names[index], // Get the name from the list based on the index
+                                                                    level: '2',
+                                                                  );
+                                                                },
+                                                              ),
+                                                              Container(child: Center(child: Text('Content for Backyard'),),),
+
+                                                            ],
+                                                          ),
+                                                        ),
+                                                      ],
+                                                    ),
+                                                  ),
+
+                                                ),
+                                              )
+
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                    actions: [
+                                      TextButton(
+                                        onPressed: () {
+                                          Navigator.of(context).pop();
+                                        },
+                                        child: Text("Cancel"),
+                                      ),
+                                      TextButton(
+                                        onPressed: () {
+                                          // Add your logic to add a customer here
+                                          Navigator.of(context).pop();
+                                        },
+                                        child: Text("Ok"),
+                                      ),
+                                    ],
+                                  );
+                                });
+                          },
                         ),
                       ),
                       CustomButton().type3(
