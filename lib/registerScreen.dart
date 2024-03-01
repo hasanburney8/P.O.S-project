@@ -709,26 +709,28 @@ class _registerScreenState extends State<registerScreen> {
                       SizedBox(
                         width: 20,
                       ),
-                      Container(
-                        height: 62,
-                        width: 150,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(5),
-                          color: Colors.blueAccent,
-                        ),
-                        child: GestureDetector(
-                          onTap: () {
-                            showDialog(
-                                context: context,
-                                builder: (BuildContext context){
-                                  return AlertDialog(
-                                    title: Container(
-                                        child:
-                                        Row(
+                      Stack(
+                        children: [
+                          Container(
+                            height: 62,
+                            width: 150,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(5),
+                              color: Colors.blueAccent,
+                            ),
+                            child: GestureDetector(
+                              onTap: () {
+                                showDialog(
+                                  context: context,
+                                  builder: (BuildContext context) {
+                                    return AlertDialog(
+                                      title: Container(
+                                        child: Row(
                                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                           children: [
-                                                Center(child: Text("Orders",style: TextStyle(fontSize: 35),)),
-                                                SizedBox(width: w*0.60,),
+                                            Center(
+                                              child: Text("Orders", style: TextStyle(fontSize: 35)),
+                                            ),
                                             GestureDetector(
                                               onTap: () {
                                                 // Close the dialog box when the icon is tapped
@@ -739,34 +741,38 @@ class _registerScreenState extends State<registerScreen> {
                                                 size: 35,
                                               ),
                                             ),
-
-
-                                            SizedBox(height: h*0.1,),
                                           ],
-                                        )
-                                    ),
-                                    content: SizedBox(
-                                      height: h*0.6,
-                                      width: w*0.7,
-                                      child:
-                                      Column(
-                                        children: [
-                                          Container(
+                                        ),
+                                      ),
+                                      content: SizedBox(
+                                        height: h * 0.6,
+                                        width: w * 0.7,
+                                        child: Column(
+                                          children: [
+                                            Container(
                                               width: double.infinity,
                                               child: SizedBox(
-                                                height: h*0.6, // Or any other specific height
+                                                height: h * 0.6,
                                                 child: Container(
-                                                  child:
-                                                  DefaultTabController(
+                                                  child: DefaultTabController(
                                                     length: 2,
                                                     child: Column(
                                                       children: [
                                                         TabBar(
                                                           isScrollable: true,
                                                           tabs: [
-                                                            Tab(child: Text('Open Orders', style: TextStyle(color: Colors.black,fontSize: 20),),),
-                                                            Tab(child: Text('Paid Orders', style: TextStyle(color: Colors.black,fontSize: 20),),),
-
+                                                            Tab(
+                                                              child: Text(
+                                                                'Open Orders',
+                                                                style: TextStyle(color: Colors.black, fontSize: 20),
+                                                              ),
+                                                            ),
+                                                            Tab(
+                                                              child: Text(
+                                                                'Paid Orders',
+                                                                style: TextStyle(color: Colors.black, fontSize: 20),
+                                                              ),
+                                                            ),
                                                           ],
                                                         ),
                                                         Divider(
@@ -774,75 +780,81 @@ class _registerScreenState extends State<registerScreen> {
                                                           height: 15,
                                                         ),
                                                         TextFormField(
-                                                          // onChanged: onChanged,
-                                                          // controller: controller,
-                                                          // keyboardType: TextInputType.text,
-                                                          // style: GoogleFonts.cabin(color: Colors.black, fontSize: 15),
                                                           decoration: InputDecoration(
-                                                              contentPadding: const EdgeInsets.symmetric(
-                                                                  vertical: 5.0, horizontal: 15),
-                                                              fillColor: Colors.white,
-                                                              filled: true,
-                                                              border: OutlineInputBorder(
-                                                                borderRadius: BorderRadius.circular(10.0),
-                                                                borderSide: const BorderSide(width: 0.8),
+                                                            contentPadding: const EdgeInsets.symmetric(vertical: 5.0, horizontal: 15),
+                                                            fillColor: Colors.white,
+                                                            filled: true,
+                                                            border: OutlineInputBorder(
+                                                              borderRadius: BorderRadius.circular(10.0),
+                                                              borderSide: const BorderSide(width: 0.8),
+                                                            ),
+                                                            enabledBorder: OutlineInputBorder(
+                                                              borderRadius: BorderRadius.circular(6.0),
+                                                              borderSide: BorderSide(
+                                                                width: 1.5,
+                                                                color: Colors.black38,
                                                               ),
-                                                              enabledBorder: OutlineInputBorder(
-                                                                borderRadius: BorderRadius.circular(6.0),
-                                                                borderSide: BorderSide(
-                                                                  width: 1.5,
-                                                                  // color: Theme.of(context).primaryColor,
-                                                                  color: Colors.black38,
-                                                                ),
+                                                            ),
+                                                            suffixIcon: InkWell(
+                                                              child: Icon(
+                                                                Icons.qr_code_scanner,
+                                                                color: Colors.grey.shade800,
+                                                                size: 30,
                                                               ),
-                                                              suffixIcon: InkWell(
-                                                                  child: Icon(
-                                                                    Icons.qr_code_scanner,
-                                                                    color: Colors.grey.shade800,
-                                                                    size: 30,
-                                                                  )),
-                                                              hintText: 'Scan/Type Order Number',
-                                                              hintStyle: TextStyle(fontSize: 18)),
+                                                            ),
+                                                            hintText: 'Scan/Type Order Number',
+                                                            hintStyle: TextStyle(fontSize: 18),
+                                                          ),
                                                         ),
-                                                        SizedBox(
-                                                          height: 15,
-                                                        ),
+                                                        SizedBox(height: 15),
                                                         Flexible(
                                                           child: TabBarView(
                                                             children: [
                                                               // Container(child: Center(child: Text('Content for Main Dining Room'),),),
-                                                              //
                                                               ListView.builder(
-
                                                                 itemCount: 10, // Adjust the itemCount based on the number of ProfileWidgets
                                                                 itemBuilder: (BuildContext context, int index) {
                                                                   // List of names for ProfileWidgets
-                                                                  List<String> orderNumber = ['CPBT-01032024-00000045','sdffdsf','CPBT-01032024-00000045','sdffdsf','CPBT-01032024-00000045','sdffdsf','CPBT-01032024-00000045','sdffdsf',];
+                                                                  List<String> orderNumber = ['CPBT-01032024-00000045', 'sdffdsf', 'CPBT-01032024-00000045', 'sdffdsf', 'CPBT-01032024-00000045', 'sdffdsf', 'CPBT-01032024-00000045', 'sdffdsf',];
 
                                                                   return ordersContainer(orderNumber: orderNumber[index], time: '10 hours ago', orderType: 'sdf', totalAmount: 'sdf', customer: 'sdf');
                                                                 },
                                                               ),
                                                               Container(child: Center(child: Text('Content for Backyard'),),),
-
                                                             ],
                                                           ),
                                                         ),
                                                       ],
                                                     ),
                                                   ),
-
                                                 ),
-                                              )
-
-                                          ),
-                                        ],
+                                              ),
+                                            ),
+                                          ],
+                                        ),
                                       ),
-                                    ),
-                                  );
-                                });
-                          },
-                        ),
+                                    );
+                                  },
+                                );
+                              },
+                            ),
+                          ),
+                          Positioned.fill(
+                            child: Center(
+                              child: Text(
+                                'Orders',
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.normal,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
                       ),
+
+
                       CustomButton().type3(
                           text: 'Orders',
                           color: Colors.blueAccent,
