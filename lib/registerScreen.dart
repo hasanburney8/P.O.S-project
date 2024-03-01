@@ -878,7 +878,7 @@ class _registerScreenState extends State<registerScreen> {
                   Text(
                     'Not Connected',
                     textAlign: TextAlign.end,
-                    style: TextStyle(fontSize: 18, color: Colors.red),
+                    style: TextStyle(fontSize: 19, color: Colors.red),
                   ),
                 ],
               ),
