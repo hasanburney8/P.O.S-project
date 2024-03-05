@@ -694,7 +694,7 @@ class _registerScreenState extends State<registerScreen> {
                           width: 200,
                           fontSize: 20,
                           fontWeight: FontWeight.normal,
-                          onTap: () {}),
+                          onTap: () { }),
                       SizedBox(
                         width: 20,
                       ),
