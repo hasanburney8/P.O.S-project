@@ -71,9 +71,13 @@ class ordersContainer extends StatelessWidget {
                           builder: (BuildContext context) {
                             return AlertDialog(
                               title: Row(
+                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                 children: [
                                   Text('Order Details'),
-                                  Container(child: Text("Close"),)
+                                  GestureDetector(
+                                    onTap: (){Navigator.of(context).pop();},
+                                      child: Container(width: w*0.05,decoration: BoxDecoration(color: Colors.grey.shade300,borderRadius: BorderRadius.circular(8.0),border: Border.all(color: Colors.black26, width: 1.0),),child: Center(child: Text("Close",style: TextStyle(fontSize: 20),)),)
+                                  )
                                 ],
                               ),
                               content: SizedBox(
@@ -93,15 +97,166 @@ class ordersContainer extends StatelessWidget {
                                     Text('Table Number : ',style: TextStyle(fontSize: 15),),
                                     Text('Table Title ',style: TextStyle(fontSize: 15),),
                                     Text('Date : ',style: TextStyle(fontSize: 15),),
+                                    Divider(),
+                                    SizedBox(height: h*0.02,),
                                     Container(
                                       child: Row(
+                                        crossAxisAlignment: CrossAxisAlignment.start,
                                         children: [
+                                          Container(
+                                            width: w*0.25,
+                                            child: Column(
+                                              crossAxisAlignment: CrossAxisAlignment.start,
+                                              children: [
+                                                Text('Items',style: TextStyle(fontSize: 20),),
+                                                Table(
+                                                  children: [
+                                                    TableRow(
+                                                      children: [
+                                                        Container(
+                                                          color: Colors.grey,
+                                                          child: TableCell(
+                                                            child: Center(
+                                                              child: Text(
+                                                                'Item Name',
+                                                                style: TextStyle(fontWeight: FontWeight.bold),
+                                                              ),
+                                                            ),
+                                                          ),
+                                                        ),
+                                                        Container(
+                                                          color: Colors.grey,
+                                                          child: TableCell(
+                                                            child: Center(
+                                                              child: Text(
+                                                                'Qty',
+                                                                style: TextStyle(fontWeight: FontWeight.bold),
+                                                              ),
+                                                            ),
+                                                          ),
+                                                        ),
+                                                        Container(
+                                                          color: Colors.grey,
+                                                          child: TableCell(
+                                                            child: Center(
+                                                              child: Text(
+                                                                'Amount',
+                                                                style: TextStyle(fontWeight: FontWeight.bold),
+                                                              ),
+                                                            ),
+                                                          ),
+                                                        ),
+                                                      ],
+                                                    ),
+                                                    TableRow(
+                                                      children: [
+                                                        TableCell(
+                                                          child: Center(
+                                                            child: Text('Guest 1'),
+                                                          ),
+                                                        ),
+                                                        TableCell(
+                                                          child: Center(
+                                                            child: Text('x1'),
+                                                          ),
+                                                        ),
+                                                        TableCell(
+                                                          child: Center(
+                                                            child: Text('\$5.00'),
+                                                          ),
+                                                        ),
+                                                      ],
+                                                    ),
+                                                    TableRow(
+                                                      children: [
+                                                        TableCell(
+                                                          child: Center(
+                                                            child: Text('Guest 2'),
+                                                          ),
+                                                        ),
+                                                        TableCell(
+                                                          child: Center(
+                                                            child: Text('x1'),
+                                                          ),
+                                                        ),
+                                                        TableCell(
+                                                          child: Center(
+                                                            child: Text('\$7.99'),
+                                                          ),
+                                                        ),
+                                                      ],
+                                                    ),
+                                                    TableRow(
+                                                      children: [
+                                                        TableCell(
+                                                          child: Center(
+                                                            child: Text('Guest 3'),
+                                                          ),
+                                                        ),
+                                                        TableCell(
+                                                          child: Center(
+                                                            child: Text('x1'),
+                                                          ),
+                                                        ),
+                                                        TableCell(
+                                                          child: Center(
+                                                            child: Text('\$112.00'),
+                                                          ),
+                                                        ),
+                                                      ],
+                                                    ),
+                                                    TableRow(
+                                                      children: [
+                                                        TableCell(
+                                                          child: Center(
+                                                            child: Text('Guest 4'),
+                                                          ),
+                                                        ),
+                                                        TableCell(
+                                                          child: Center(
+                                                            child: Text('x1'),
+                                                          ),
+                                                        ),
+                                                        TableCell(
+                                                          child: Center(
+                                                            child: Text('\$112.00'),
+                                                          ),
+                                                        ),
+                                                      ],
+                                                    ),
+                                                    TableRow(
+                                                      children: [
+                                                        TableCell(
+                                                          child: Center(
+                                                            child: Text('Guest 5'),
+                                                          ),
+                                                        ),
+                                                        TableCell(
+                                                          child: Center(
+                                                            child: Text(''),
+                                                          ),
+                                                        ),
+                                                        TableCell(
+                                                          child: Center(
+                                                            child: Text(''),
+                                                          ),
+                                                        ),
+                                                      ],
+                                                    ),
+                                                  ],
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                          SizedBox(width: w*0.02,),
                                           Column(
                                             crossAxisAlignment: CrossAxisAlignment.start,
                                             children: [
                                               Container(
                                                 width: w*0.1,
                                                 child: Column(
+                                                  mainAxisAlignment: MainAxisAlignment.start,
+                                                  crossAxisAlignment: CrossAxisAlignment.start,
                                                   children: [
                                                     Text('Transactions',style: TextStyle(fontSize: 20),),
                                                     Row(
@@ -190,42 +345,3 @@ class ordersContainer extends StatelessWidget {
 }
 
 
-
-
-class CustomElevatedButton extends StatelessWidget {
-  final VoidCallback? onPressed;
-  final Color backgroundColor;
-  double? horizontalPadding;
-  double? verticalPadding;
-  final String buttonText;
-
-  CustomElevatedButton({
-    Key? key,
-    required this.onPressed,
-    required this.backgroundColor,
-    this.horizontalPadding,
-    this.verticalPadding,
-    required this.buttonText,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return ElevatedButton(
-      onPressed: onPressed,
-      style: ElevatedButton.styleFrom(
-        backgroundColor: backgroundColor,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(5),
-        ),
-      ),
-      child: Padding(
-        padding: EdgeInsets.symmetric(
-            vertical: verticalPadding ?? 8, horizontal: horizontalPadding ?? 0),
-        child: Text(
-          buttonText,
-          style: TextStyle(color: Colors.white, fontSize: 18),
-        ),
-      ),
-    );
-  }
-}
