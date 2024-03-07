@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pos_project/Utils/container.dart';
 import 'package:pos_project/Utils/ordersContainer.dart';
+import 'package:pos_project/Utils/paidOrdersContainers.dart';
 import 'Utils/button.dart';
 import 'Utils/profileWidget.dart';
 
@@ -820,7 +821,15 @@ class _registerScreenState extends State<registerScreen> {
                                                                   return ordersContainer(orderNumber: orderNumber[index], time: '10 hours ago', orderType: 'sdf', totalAmount: 'sdf', customer: 'sdf');
                                                                 },
                                                               ),
-                                                              Container(child: Center(child: Text('Content for Backyard'),),),
+                                                              ListView.builder(
+                                                                itemCount: 10, // Adjust the itemCount based on the number of ProfileWidgets
+                                                                itemBuilder: (BuildContext context, int index) {
+                                                                  // List of names for ProfileWidgets
+                                                                  List<String> paidorderNumber = ['CPBT-01032024-00000045', 'sdffdsf', 'CPBT-01032024-00000045', 'sdffdsf', 'CPBT-01032024-00000045', 'sdffdsf', 'CPBT-01032024-00000045', 'sdffdsf',];
+
+                                                                  return paidOrdersContainer(paidorderNumber: paidorderNumber[index], paidtime: '10 hours ago', paidorderType: 'sdf', paidtotalAmount: 'sdf', paidcustomer: 'sdf');
+                                                                },
+                                                              ),
                                                             ],
                                                           ),
                                                         ),
