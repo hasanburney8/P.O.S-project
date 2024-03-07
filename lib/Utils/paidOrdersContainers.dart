@@ -368,11 +368,6 @@ class paidOrdersContainer extends StatelessWidget {
                     SizedBox(width: w*0.01,),
                     Container(height: h * 0.05, width: w * 0.07,decoration: BoxDecoration(borderRadius: BorderRadius.circular(8.0), color: Colors.blue.shade900,), child: Center(child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [Icon(Icons.print,color: Colors.white,), Text('Print',style: TextStyle(color: Colors.white),),],),),),
 
-
-
-
-
-
                   ],
                 ),
               ],
