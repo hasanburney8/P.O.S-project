@@ -77,7 +77,7 @@ class ordersContainer extends StatelessWidget {
                                   GestureDetector(
                                     onTap: (){Navigator.of(context).pop();},
                                       child: Container(width: w*0.05,decoration: BoxDecoration(color: Colors.grey.shade300,borderRadius: BorderRadius.circular(8.0),border: Border.all(color: Colors.black26, width: 1.0),),child: Center(child: Text("Close",style: TextStyle(fontSize: 20),)),)
-                                  )
+                                  ),
                                 ],
                               ),
                               content: SizedBox(
@@ -86,7 +86,6 @@ class ordersContainer extends StatelessWidget {
                                 child: Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
-
                                     Row(
                                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                       children: [
@@ -112,10 +111,9 @@ class ordersContainer extends StatelessWidget {
                                                 Table(
                                                   children: [
                                                     TableRow(
+                                                      decoration: BoxDecoration(color: Colors.grey),
                                                       children: [
-                                                        Container(
-                                                          color: Colors.grey,
-                                                          child: TableCell(
+                                                        TableCell(
                                                             child: Center(
                                                               child: Text(
                                                                 'Item Name',
@@ -123,10 +121,7 @@ class ordersContainer extends StatelessWidget {
                                                               ),
                                                             ),
                                                           ),
-                                                        ),
-                                                        Container(
-                                                          color: Colors.grey,
-                                                          child: TableCell(
+                                                        TableCell(
                                                             child: Center(
                                                               child: Text(
                                                                 'Qty',
@@ -134,10 +129,7 @@ class ordersContainer extends StatelessWidget {
                                                               ),
                                                             ),
                                                           ),
-                                                        ),
-                                                        Container(
-                                                          color: Colors.grey,
-                                                          child: TableCell(
+                                                        TableCell(
                                                             child: Center(
                                                               child: Text(
                                                                 'Amount',
@@ -145,7 +137,6 @@ class ordersContainer extends StatelessWidget {
                                                               ),
                                                             ),
                                                           ),
-                                                        ),
                                                       ],
                                                     ),
                                                     TableRow(
