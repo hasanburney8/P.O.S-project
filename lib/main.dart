@@ -3,6 +3,7 @@ import 'package:pos_project/PlaceOrderScreen.dart';
 import 'package:pos_project/Utils/shiftButton.dart';
 import 'package:pos_project/demoruns.dart';
 import 'package:pos_project/dialougebox.dart';
+import 'package:pos_project/godknowswhichscreen.dart';
 import 'package:pos_project/loginScreen.dart';
 import 'package:pos_project/menuScreen.dart';
 import 'package:pos_project/registerScreen.dart';
@@ -22,7 +23,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: registerScreen(), //this connects the homescreen
+      home: Screenview(), //this connects the homescreen
       // home: HomeScreen(),
     );
   }
