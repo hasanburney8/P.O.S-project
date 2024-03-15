@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: registerScreen(), //this connects the homescreen
+      home: diningScreen(), //this connects the homescreen
       // home: HomeScreen(),
     );
   }

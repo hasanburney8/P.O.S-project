@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:pos_project/Utils/shiftButton.dart';
 
 import 'Utils/button.dart';
+import 'Utils/profileWidget.dart';
 
 
 class diningScreen extends StatefulWidget {
@@ -263,7 +264,21 @@ class _diningScreenState extends State<diningScreen> {
                   ),
                 ],
               ),
-              Column(), //TODO tabbars and tables
+              DefaultTabController(
+                  length: 2,
+                  child: Column(
+                    children: [
+                      TabBar(
+                        isScrollable: true,
+                        tabs: [
+                          Tab(child: Text('Main Dining Room', style: TextStyle(color: Colors.black,),),),
+                          Tab(child: Text('Backyard', style: TextStyle(color: Colors.black,),),),
+                        ],
+                      ),
+
+                    ],
+                  )
+              )
             ],
           )
         ],
