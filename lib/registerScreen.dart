@@ -300,7 +300,7 @@ class _registerScreenState extends State<registerScreen> {
                                                             Center(child: Text("Select Table Type",style: TextStyle(fontSize: 25),)),
                                                             SizedBox(width: w*0.01,),
                                                             Icon(Icons.edit,color: Colors.blueAccent,size: 30,),
-                                                            Text("Add/Edit Dining",style: TextStyle(color: Colors.blueAccent,fontSize: 20),),
+                                                            GestureDetector(child: Text("Add/Edit Dining",style: TextStyle(color: Colors.blueAccent,fontSize: 20),)),
                                                           ],
                                                         ),
                                                         Container(
