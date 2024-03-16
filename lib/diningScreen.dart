@@ -265,20 +265,20 @@ class _diningScreenState extends State<diningScreen> {
                 ],
               ),
               DefaultTabController(
-                  length: 2,
-                  child: Column(
-                    children: [
-                      TabBar(
-                        isScrollable: true,
-                        tabs: [
-                          Tab(child: Text('Main Dining Room', style: TextStyle(color: Colors.black,),),),
-                          Tab(child: Text('Backyard', style: TextStyle(color: Colors.black,),),),
-                        ],
-                      ),
-
-                    ],
-                  )
+                length: 2,
+                child: Column(
+                  children: [
+                    TabBar(
+                      isScrollable: true,
+                      tabs: [
+                        Tab(child: Text('Main Dining Room', style: TextStyle(color: Colors.black))),
+                        Tab(child: Text('Backyard', style: TextStyle(color: Colors.white))),
+                      ],
+                    ),
+                  ],
+                ),
               )
+
             ],
           )
         ],
