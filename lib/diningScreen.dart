@@ -267,7 +267,7 @@ class _diningScreenState extends State<diningScreen> {
                   ],
                 ),
                 DefaultTabController(
-                  length: 23,
+                  length: 24,
                   child: Expanded(
                     child: Column(
                         mainAxisSize: MainAxisSize.min,
@@ -275,29 +275,294 @@ class _diningScreenState extends State<diningScreen> {
                           TabBar(
                             isScrollable: true,
                             tabs: [
-                              Tab(child: Text('Main Dining Room', style: TextStyle(color: Colors.black))),
-                              Tab(child: Text('Backyard', style: TextStyle(color: Colors.black))),
-                              Tab(child: Text('Patio', style: TextStyle(color: Colors.black,),),),
-                              Tab(child: Text('Bar & More', style: TextStyle(color: Colors.black,),),),
-                              Tab(child: Text('Test Area', style: TextStyle(color: Colors.black,),),),
-                              Tab(child: Text('Test Dining', style: TextStyle(color: Colors.black,),),),
-                              Tab(child: Text('Test Section 1', style: TextStyle(color: Colors.black,),),),
-                              Tab(child: Text('Test Room', style: TextStyle(color: Colors.black,),),),
-                              Tab(child: Text('Test Ned', style: TextStyle(color: Colors.black,),),),
-                              Tab(child: Text('Test Area 2', style: TextStyle(color: Colors.black,),),),
-                              Tab(child: Text('Test Area 3', style: TextStyle(color: Colors.black,),),),
-                              Tab(child: Text('test dining 2', style: TextStyle(color: Colors.black,),),),
-                              Tab(child: Text('test patio 2', style: TextStyle(color: Colors.black,),),),
-                              Tab(child: Text('test 23', style: TextStyle(color: Colors.black,),),),
-                              Tab(child: Text('test 34', style: TextStyle(color: Colors.black,),),),
-                              Tab(child: Text('testoffice', style: TextStyle(color: Colors.black,),),),
-                              Tab(child: Text('testt123', style: TextStyle(color: Colors.black,),),),
-                              Tab(child: Text('sec101', style: TextStyle(color: Colors.black,),),),
-                              Tab(child: Text('f34', style: TextStyle(color: Colors.black,),),),
-                              Tab(child: Text('Dining area 2', style: TextStyle(color: Colors.black,),),),
-                              Tab(child: Text('TaBLE 4', style: TextStyle(color: Colors.black,),),),
-                              Tab(child: Text('bc123', style: TextStyle(color: Colors.black,),),),
-                              Tab(child: Text('1234', style: TextStyle(color: Colors.black,),),),
+                              Tab(child: Column(
+                                children: [
+                                  Row(
+                                    children: [
+                                      Text('Main Dining Room', style: TextStyle(color: Colors.white)),
+                                      Icon(Icons.edit,color: Colors.blueAccent,),
+                                      SizedBox(width: w*0.01,),
+                                      Icon(Icons.delete,color: Colors.red,)
+                                    ],
+                                  ),
+                                ],
+                              )),
+                              Tab(child: Column(
+                                children: [
+                                  Row(
+                                    children: [
+                                      Text('Backyard', style: TextStyle(color: Colors.white)),
+                                      Icon(Icons.edit,color: Colors.blueAccent,),
+                                      SizedBox(width: w*0.01,),
+                                      Icon(Icons.delete,color: Colors.red,)
+                                    ],
+                                  ),
+                                ],
+                              )),
+                              Tab(child: Column(
+                                children: [
+                                  Row(
+                                    children: [
+                                      Text('Patio', style: TextStyle(color: Colors.white)),
+                                      Icon(Icons.edit,color: Colors.blueAccent,),
+                                      SizedBox(width: w*0.01,),
+                                      Icon(Icons.delete,color: Colors.red,)
+                                    ],
+                                  ),
+                                ],
+                              )),
+                              Tab(child: Column(
+                                children: [
+                                  Row(
+                                    children: [
+                                      Text('Bar & More', style: TextStyle(color: Colors.white)),
+                                      Icon(Icons.edit,color: Colors.blueAccent,),
+                                      SizedBox(width: w*0.01,),
+                                      Icon(Icons.delete,color: Colors.red,)
+                                    ],
+                                  ),
+                                ],
+                              )),
+                              Tab(child: Column(
+                                children: [
+                                  Row(
+                                    children: [
+                                      Text('Test Area', style: TextStyle(color: Colors.white)),
+                                      Icon(Icons.edit,color: Colors.blueAccent,),
+                                      SizedBox(width: w*0.01,),
+                                      Icon(Icons.delete,color: Colors.red,)
+                                    ],
+                                  ),
+                                ],
+                              )),
+                              Tab(child: Column(
+                                children: [
+                                  Row(
+                                    children: [
+                                      Text('Test Dining', style: TextStyle(color: Colors.white)),
+                                      Icon(Icons.edit,color: Colors.blueAccent,),
+                                      SizedBox(width: w*0.01,),
+                                      Icon(Icons.delete,color: Colors.red,)
+                                    ],
+                                  ),
+                                ],
+                              )),
+                              Tab(child: Column(
+                                children: [
+                                  Row(
+                                    children: [
+                                      Text('Test Section 1', style: TextStyle(color: Colors.white)),
+                                      Icon(Icons.edit,color: Colors.blueAccent,),
+                                      SizedBox(width: w*0.01,),
+                                      Icon(Icons.delete,color: Colors.red,)
+                                    ],
+                                  ),
+                                ],
+                              )),
+                              Tab(child: Column(
+                                children: [
+                                  Row(
+                                    children: [
+                                      Text('Test Room', style: TextStyle(color: Colors.white)),
+                                      Icon(Icons.edit,color: Colors.blueAccent,),
+                                      SizedBox(width: w*0.01,),
+                                      Icon(Icons.delete,color: Colors.red,)
+                                    ],
+                                  ),
+                                ],
+                              )),
+                              Tab(child: Column(
+                                children: [
+                                  Row(
+                                    children: [
+                                      Text('Test Ned', style: TextStyle(color: Colors.white)),
+                                      Icon(Icons.edit,color: Colors.blueAccent,),
+                                      SizedBox(width: w*0.01,),
+                                      Icon(Icons.delete,color: Colors.red,)
+                                    ],
+                                  ),
+                                ],
+                              )),
+                              Tab(child: Column(
+                                children: [
+                                  Row(
+                                    children: [
+                                      Text('Test Area 2', style: TextStyle(color: Colors.white)),
+                                      Icon(Icons.edit,color: Colors.blueAccent,),
+                                      SizedBox(width: w*0.01,),
+                                      Icon(Icons.delete,color: Colors.red,)
+                                    ],
+                                  ),
+                                ],
+                              )),
+                              Tab(child: Column(
+                                children: [
+                                  Row(
+                                    children: [
+                                      Text('Test Arean3', style: TextStyle(color: Colors.white)),
+                                      Icon(Icons.edit,color: Colors.blueAccent,),
+                                      SizedBox(width: w*0.01,),
+                                      Icon(Icons.delete,color: Colors.red,)
+                                    ],
+                                  ),
+                                ],
+                              )),
+                              Tab(child: Column(
+                                children: [
+                                  Row(
+                                    children: [
+                                      Text('Test dining 2', style: TextStyle(color: Colors.white)),
+                                      Icon(Icons.edit,color: Colors.blueAccent,),
+                                      SizedBox(width: w*0.01,),
+                                      Icon(Icons.delete,color: Colors.red,)
+                                    ],
+                                  ),
+                                ],
+                              )),
+                              Tab(child: Column(
+                                children: [
+                                  Row(
+                                    children: [
+                                      Text('Test Area 3', style: TextStyle(color: Colors.white)),
+                                      Icon(Icons.edit,color: Colors.blueAccent,),
+                                      SizedBox(width: w*0.01,),
+                                      Icon(Icons.delete,color: Colors.red,)
+                                    ],
+                                  ),
+                                ],
+                              )),
+                              Tab(child: Column(
+                                children: [
+                                  Row(
+                                    children: [
+                                      Text('Test patio 2', style: TextStyle(color: Colors.white)),
+                                      Icon(Icons.edit,color: Colors.blueAccent,),
+                                      SizedBox(width: w*0.01,),
+                                      Icon(Icons.delete,color: Colors.red,)
+                                    ],
+                                  ),
+                                ],
+                              )),
+                              Tab(child: Column(
+                                children: [
+                                  Row(
+                                    children: [
+                                      Text('test 23', style: TextStyle(color: Colors.white)),
+                                      Icon(Icons.edit,color: Colors.blueAccent,),
+                                      SizedBox(width: w*0.01,),
+                                      Icon(Icons.delete,color: Colors.red,)
+                                    ],
+                                  ),
+                                ],
+                              )),
+                              Tab(child: Column(
+                                children: [
+                                  Row(
+                                    children: [
+                                      Text('test 34', style: TextStyle(color: Colors.white)),
+                                      Icon(Icons.edit,color: Colors.blueAccent,),
+                                      SizedBox(width: w*0.01,),
+                                      Icon(Icons.delete,color: Colors.red,)
+                                    ],
+                                  ),
+                                ],
+                              )),
+                              Tab(child: Column(
+                                children: [
+                                  Row(
+                                    children: [
+                                      Text('testoffice', style: TextStyle(color: Colors.white)),
+                                      Icon(Icons.edit,color: Colors.blueAccent,),
+                                      SizedBox(width: w*0.01,),
+                                      Icon(Icons.delete,color: Colors.red,)
+                                    ],
+                                  ),
+                                ],
+                              )),
+                              Tab(child: Column(
+                                children: [
+                                  Row(
+                                    children: [
+                                      Text('testt123', style: TextStyle(color: Colors.white)),
+                                      Icon(Icons.edit,color: Colors.blueAccent,),
+                                      SizedBox(width: w*0.01,),
+                                      Icon(Icons.delete,color: Colors.red,)
+                                    ],
+                                  ),
+                                ],
+                              )),
+                              Tab(child: Column(
+                                children: [
+                                  Row(
+                                    children: [
+                                      Text('sec101', style: TextStyle(color: Colors.white)),
+                                      Icon(Icons.edit,color: Colors.blueAccent,),
+                                      SizedBox(width: w*0.01,),
+                                      Icon(Icons.delete,color: Colors.red,)
+                                    ],
+                                  ),
+                                ],
+                              )),
+                              Tab(child: Column(
+                                children: [
+                                  Row(
+                                    children: [
+                                      Text('f34', style: TextStyle(color: Colors.white)),
+                                      Icon(Icons.edit,color: Colors.blueAccent,),
+                                      SizedBox(width: w*0.01,),
+                                      Icon(Icons.delete,color: Colors.red,)
+                                    ],
+                                  ),
+                                ],
+                              )),
+                              Tab(child: Column(
+                                children: [
+                                  Row(
+                                    children: [
+                                      Text('Dining area 2', style: TextStyle(color: Colors.white)),
+                                      Icon(Icons.edit,color: Colors.blueAccent,),
+                                      SizedBox(width: w*0.01,),
+                                      Icon(Icons.delete,color: Colors.red,)
+                                    ],
+                                  ),
+                                ],
+                              )),
+                              Tab(child: Column(
+                                children: [
+                                  Row(
+                                    children: [
+                                      Text('TaBLE 4', style: TextStyle(color: Colors.white)),
+                                      Icon(Icons.edit,color: Colors.blueAccent,),
+                                      SizedBox(width: w*0.01,),
+                                      Icon(Icons.delete,color: Colors.red,)
+                                    ],
+                                  ),
+                                ],
+                              )),
+                              Tab(child: Column(
+                                children: [
+                                  Row(
+                                    children: [
+                                      Text('bc123', style: TextStyle(color: Colors.white)),
+                                      Icon(Icons.edit,color: Colors.blueAccent,),
+                                      SizedBox(width: w*0.01,),
+                                      Icon(Icons.delete,color: Colors.red,)
+                                    ],
+                                  ),
+                                ],
+                              )),
+                              Tab(child: Column(
+                                children: [
+                                  Row(
+                                    children: [
+                                      Text('1234', style: TextStyle(color: Colors.white)),
+                                      Icon(Icons.edit,color: Colors.blueAccent,),
+                                      SizedBox(width: w*0.01,),
+                                      Icon(Icons.delete,color: Colors.red,)
+                                    ],
+                                  ),
+                                ],
+                              )),
                             ],
                           ),
                           Expanded(
@@ -331,6 +596,7 @@ class _diningScreenState extends State<diningScreen> {
                                 Container(child: Center(child: Text('Content for Test Area 2'),),),
                                 Container(child: Center(child: Text('Content for Test Area 3'),),),
                                 Container(child: Center(child: Text('Content for test dining 2'),),),
+                                Container(child: Center(child: Text('Content for Test Area 3'),),),
                                 Container(child: Center(child: Text('Content for test patio 2'),),),
                                 Container(child: Center(child: Text('Content for test 23'),),),
                                 Container(child: Center(child: Text('Content for test 34'),),),
@@ -351,6 +617,20 @@ class _diningScreenState extends State<diningScreen> {
                   ),
               ],
             ),
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              Container(
+                width: 50,
+                height: 50,
+                decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                color: Colors.red.shade900,
+              ),
+              child: Icon(Icons.add,size: 40,color: Colors.white,),
+              ),
+            ],
           )
         ],
       ),
