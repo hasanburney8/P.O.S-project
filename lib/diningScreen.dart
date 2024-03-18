@@ -68,218 +68,289 @@ class _diningScreenState extends State<diningScreen> {
               ],
             ),
           ),
-          Row(
-            children: [
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text('Floor Plan',style: TextStyle(color: Colors.white,fontSize: 30),),
-                  Divider(color: Colors.white10,thickness: 5,),
-                  GestureDetector(
-                    onTap: () {
-                      showDialog(
-                        context: context,
-                        builder: (BuildContext context) {
-                          return AlertDialog(
-                            title: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Text("Add Table",style: TextStyle(fontSize: 30,fontWeight: FontWeight.bold)),
-                                GestureDetector(
-                                    onTap: () {Navigator.of(context).pop();},
-                                    child: Container(width: w * 0.055,height: h*0.06, decoration: BoxDecoration(color: Colors.grey.shade300, borderRadius: BorderRadius.circular(8.0), boxShadow: [BoxShadow(color: Colors.black.withOpacity(0.2), spreadRadius: 2, blurRadius: 5, offset: Offset(0, 3))]), child: Row(children: [Icon(Icons.close), Text('Close')],),)
-                                ),
-                              ],
-                            ),
-                            content: Container(
-                              width: w*0.4,
-                              height: h*0.6,
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text('Title',style: TextStyle(fontSize: 21),),
-                                  Container(
-                                    decoration: BoxDecoration(
-                                      border: Border.all(
-                                        color: Colors.grey, // Set border color
-                                        width: 1.0, // Set border width
-                                      ),
-                                      borderRadius: BorderRadius.circular(8.0), // Set border radius
-                                    ),
-                                    child: TextFormField(
-                                      // Add TextFormField properties here
-                                    ),
-                                  ),
-                                  SizedBox(height: h*0.02,),
-                                  Text('Dining Section',style: TextStyle(fontSize: 21),),
-                                  Container(
-                                    width: w*0.5,
-                                    decoration: BoxDecoration(
-                                      border: Border.all(
-                                        color: Colors.grey, // Set border color
-                                        width: 1.0, // Set border width
-                                      ),
-                                      borderRadius: BorderRadius.circular(8.0), // Set border radius
-                                    ),
-                                    child: DropdownButton<String>(
-                                      value: dropdownValue,
-                                      onChanged: (String? newValue) {  // <-- Note the added '?' to allow null
-                                        setState(() {
-                                          dropdownValue = newValue!; // <-- Use '!' to assert non-null before assignment
-                                        });
-                                      },
-                                      items: <String>['Select', 'Round', 'Square']
-                                          .map<DropdownMenuItem<String>>((String value) {
-                                        return DropdownMenuItem<String>(
-                                          value: value,
-                                          child: Text(value),
-                                        );
-                                      }).toList(),
-                                    ),
-                                  ),
-                                  SizedBox(height: h*0.02,),
-                                  Text('Table Type',style: TextStyle(fontSize: 21),),
-                                  Container(
-                                    width: w*0.5,
-                                    decoration: BoxDecoration(
-                                      border: Border.all(
-                                        color: Colors.grey, // Set border color
-                                        width: 1.0, // Set border width
-                                      ),
-                                      borderRadius: BorderRadius.circular(8.0), // Set border radius
-                                    ),
-                                    child: DropdownButton<String>(
-                                      value: dropdownValue,
-                                      onChanged: (String? newValue) {  // <-- Note the added '?' to allow null
-                                        setState(() {
-                                          dropdownValue = newValue!; // <-- Use '!' to assert non-null before assignment
-                                        });
-                                      },
-                                      items: <String>['Select', 'Round', 'Square']
-                                          .map<DropdownMenuItem<String>>((String value) {
-                                        return DropdownMenuItem<String>(
-                                          value: value,
-                                          child: Text(value),
-                                        );
-                                      }).toList(),
-                                    ),
-                                  ),
-                                  SizedBox(height: h*0.02,),
-                                  Text('Seating Capacity',style: TextStyle(fontSize: 21),),
-                                  Container(
-                                    decoration: BoxDecoration(
-                                      border: Border.all(
-                                        color: Colors.grey, // Set border color
-                                        width: 1.0, // Set border width
-                                      ),
-                                      borderRadius: BorderRadius.circular(8.0), // Set border radius
-                                    ),
-                                    child: TextFormField(
-                                      // Add TextFormField properties here
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                            actions: [
-                              CustomButton().type3(
-                                    text: 'Save',
-                                    color: Colors.blueAccent,
-                                    width: 200,
-                                    fontSize: 20,
-                                    fontWeight: FontWeight.normal,
-                                    onTap: () { }
-                              ),
-                            ],
-                          );
-                        },
-                      );
-                    },
-                    child: Text('Add Table',style: TextStyle(color: Colors.white,fontSize: 30),),
-                  ),
-
-                  Divider(color: Colors.white10,thickness: 5,),
-                  GestureDetector(
-                    onTap: () {
-                      showDialog(
-                        context: context,
-                        builder: (BuildContext context) {
-                          return AlertDialog(
-                            title: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Text("Add Section",style: TextStyle(fontSize: 30,fontWeight: FontWeight.bold),),
-                                GestureDetector(
-                                    onTap: () {Navigator.of(context).pop();},
-                                    child: Container(width: w * 0.055,height: h*0.06, decoration: BoxDecoration(color: Colors.grey.shade300, borderRadius: BorderRadius.circular(8.0), boxShadow: [BoxShadow(color: Colors.black.withOpacity(0.2), spreadRadius: 2, blurRadius: 5, offset: Offset(0, 3))]), child: Row(children: [Icon(Icons.close), Text('Close')],),)
-                                ),
-                              ],
-                            ),
-                            content: Container(
-                              width: w*0.4,
-                              height: h*0.3,
-                              child: Column(
-                                children: [
-                                  Divider(),
-                                  SizedBox(height: h*0.02,),
-                                  Container(
-                                    width: w*0.4,
-                                    height: h*0.25,
-                                    child: Row(
-                                      crossAxisAlignment: CrossAxisAlignment.start,
-                                      children: [
-                                        Container(
-                                          width: w*0.2,
-                                          height: h*0.06,
-                                          decoration: BoxDecoration(
-                                            border: Border.all(
-                                              color: Colors.grey, // Set border color
-                                              width: w*0.001, // Set border width
-                                            ),
-                                            borderRadius: BorderRadius.circular(8.0), // Set border radius
-                                          ),
-                                          child: TextFormField(),
-                                        ),
-                                        SizedBox(width: w*0.01,),
-                                        Container(
-                                          width: w*0.05,
-                                          height: h*0.06,
-                                          decoration: BoxDecoration(
-                                            color: Colors.blueAccent,
-                                            borderRadius: BorderRadius.circular(8.0),
-                                          ),
-                                          child: Center(child: Text('Save',style: TextStyle(color: Colors.white,fontSize: 25),)),
-                                        )
-                                      ],
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          );
-                        },
-                      );
-                    },
-                    child:Text('Add Section',style: TextStyle(color: Colors.white,fontSize: 30),),
-                  ),
-                ],
-              ),
-              DefaultTabController(
-                length: 2,
-                child: Column(
+          Container(
+            height: h*0.68,
+            child: Row(
+              children: [
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    TabBar(
-                      isScrollable: true,
-                      tabs: [
-                        Tab(child: Text('Main Dining Room', style: TextStyle(color: Colors.black))),
-                        Tab(child: Text('Backyard', style: TextStyle(color: Colors.black))),
-                      ],
+                    Text('Floor Plan',style: TextStyle(color: Colors.white,fontSize: 30),),
+                    Divider(color: Colors.white10,thickness: 5,),
+                    GestureDetector(
+                      onTap: () {
+                        showDialog(
+                          context: context,
+                          builder: (BuildContext context) {
+                            return AlertDialog(
+                              title: Row(
+                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Text("Add Table",style: TextStyle(fontSize: 30,fontWeight: FontWeight.bold)),
+                                  GestureDetector(
+                                      onTap: () {Navigator.of(context).pop();},
+                                      child: Container(width: w * 0.055,height: h*0.06, decoration: BoxDecoration(color: Colors.grey.shade300, borderRadius: BorderRadius.circular(8.0), boxShadow: [BoxShadow(color: Colors.black.withOpacity(0.2), spreadRadius: 2, blurRadius: 5, offset: Offset(0, 3))]), child: Row(children: [Icon(Icons.close), Text('Close')],),)
+                                  ),
+                                ],
+                              ),
+                              content: Container(
+                                width: w*0.4,
+                                height: h*0.6,
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text('Title',style: TextStyle(fontSize: 21),),
+                                    Container(
+                                      decoration: BoxDecoration(
+                                        border: Border.all(
+                                          color: Colors.grey, // Set border color
+                                          width: 1.0, // Set border width
+                                        ),
+                                        borderRadius: BorderRadius.circular(8.0), // Set border radius
+                                      ),
+                                      child: TextFormField(
+                                        // Add TextFormField properties here
+                                      ),
+                                    ),
+                                    SizedBox(height: h*0.02,),
+                                    Text('Dining Section',style: TextStyle(fontSize: 21),),
+                                    Container(
+                                      width: w*0.5,
+                                      decoration: BoxDecoration(
+                                        border: Border.all(
+                                          color: Colors.grey, // Set border color
+                                          width: 1.0, // Set border width
+                                        ),
+                                        borderRadius: BorderRadius.circular(8.0), // Set border radius
+                                      ),
+                                      child: DropdownButton<String>(
+                                        value: dropdownValue,
+                                        onChanged: (String? newValue) {  // <-- Note the added '?' to allow null
+                                          setState(() {
+                                            dropdownValue = newValue!; // <-- Use '!' to assert non-null before assignment
+                                          });
+                                        },
+                                        items: <String>['Select', 'Round', 'Square']
+                                            .map<DropdownMenuItem<String>>((String value) {
+                                          return DropdownMenuItem<String>(
+                                            value: value,
+                                            child: Text(value),
+                                          );
+                                        }).toList(),
+                                      ),
+                                    ),
+                                    SizedBox(height: h*0.02,),
+                                    Text('Table Type',style: TextStyle(fontSize: 21),),
+                                    Container(
+                                      width: w*0.5,
+                                      decoration: BoxDecoration(
+                                        border: Border.all(
+                                          color: Colors.grey, // Set border color
+                                          width: 1.0, // Set border width
+                                        ),
+                                        borderRadius: BorderRadius.circular(8.0), // Set border radius
+                                      ),
+                                      child: DropdownButton<String>(
+                                        value: dropdownValue,
+                                        onChanged: (String? newValue) {  // <-- Note the added '?' to allow null
+                                          setState(() {
+                                            dropdownValue = newValue!; // <-- Use '!' to assert non-null before assignment
+                                          });
+                                        },
+                                        items: <String>['Select', 'Round', 'Square']
+                                            .map<DropdownMenuItem<String>>((String value) {
+                                          return DropdownMenuItem<String>(
+                                            value: value,
+                                            child: Text(value),
+                                          );
+                                        }).toList(),
+                                      ),
+                                    ),
+                                    SizedBox(height: h*0.02,),
+                                    Text('Seating Capacity',style: TextStyle(fontSize: 21),),
+                                    Container(
+                                      decoration: BoxDecoration(
+                                        border: Border.all(
+                                          color: Colors.grey, // Set border color
+                                          width: 1.0, // Set border width
+                                        ),
+                                        borderRadius: BorderRadius.circular(8.0), // Set border radius
+                                      ),
+                                      child: TextFormField(
+                                        // Add TextFormField properties here
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              actions: [
+                                CustomButton().type3(
+                                      text: 'Save',
+                                      color: Colors.blueAccent,
+                                      width: 200,
+                                      fontSize: 20,
+                                      fontWeight: FontWeight.normal,
+                                      onTap: () { }
+                                ),
+                              ],
+                            );
+                          },
+                        );
+                      },
+                      child: Text('Add Table',style: TextStyle(color: Colors.white,fontSize: 30),),
+                    ),
+
+                    Divider(color: Colors.white10,thickness: 5,),
+                    GestureDetector(
+                      onTap: () {
+                        showDialog(
+                          context: context,
+                          builder: (BuildContext context) {
+                            return AlertDialog(
+                              title: Row(
+                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Text("Add Section",style: TextStyle(fontSize: 30,fontWeight: FontWeight.bold),),
+                                  GestureDetector(
+                                      onTap: () {Navigator.of(context).pop();},
+                                      child: Container(width: w * 0.055,height: h*0.06, decoration: BoxDecoration(color: Colors.grey.shade300, borderRadius: BorderRadius.circular(8.0), boxShadow: [BoxShadow(color: Colors.black.withOpacity(0.2), spreadRadius: 2, blurRadius: 5, offset: Offset(0, 3))]), child: Row(children: [Icon(Icons.close), Text('Close')],),)
+                                  ),
+                                ],
+                              ),
+                              content: Container(
+                                width: w*0.4,
+                                height: h*0.3,
+                                child: Column(
+                                  children: [
+                                    Divider(),
+                                    SizedBox(height: h*0.02,),
+                                    Container(
+                                      width: w*0.4,
+                                      height: h*0.25,
+                                      child: Row(
+                                        crossAxisAlignment: CrossAxisAlignment.start,
+                                        children: [
+                                          Container(
+                                            width: w*0.2,
+                                            height: h*0.06,
+                                            decoration: BoxDecoration(
+                                              border: Border.all(
+                                                color: Colors.grey, // Set border color
+                                                width: w*0.001, // Set border width
+                                              ),
+                                              borderRadius: BorderRadius.circular(8.0), // Set border radius
+                                            ),
+                                            child: TextFormField(),
+                                          ),
+                                          SizedBox(width: w*0.01,),
+                                          Container(
+                                            width: w*0.05,
+                                            height: h*0.06,
+                                            decoration: BoxDecoration(
+                                              color: Colors.blueAccent,
+                                              borderRadius: BorderRadius.circular(8.0),
+                                            ),
+                                            child: Center(child: Text('Save',style: TextStyle(color: Colors.white,fontSize: 25),)),
+                                          )
+                                        ],
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            );
+                          },
+                        );
+                      },
+                      child:Text('Add Section',style: TextStyle(color: Colors.white,fontSize: 30),),
                     ),
                   ],
                 ),
-              )
+                DefaultTabController(
+                  length: 23,
+                  child: Expanded(
+                    child: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          TabBar(
+                            isScrollable: true,
+                            tabs: [
+                              Tab(child: Text('Main Dining Room', style: TextStyle(color: Colors.black))),
+                              Tab(child: Text('Backyard', style: TextStyle(color: Colors.black))),
+                              Tab(child: Text('Patio', style: TextStyle(color: Colors.black,),),),
+                              Tab(child: Text('Bar & More', style: TextStyle(color: Colors.black,),),),
+                              Tab(child: Text('Test Area', style: TextStyle(color: Colors.black,),),),
+                              Tab(child: Text('Test Dining', style: TextStyle(color: Colors.black,),),),
+                              Tab(child: Text('Test Section 1', style: TextStyle(color: Colors.black,),),),
+                              Tab(child: Text('Test Room', style: TextStyle(color: Colors.black,),),),
+                              Tab(child: Text('Test Ned', style: TextStyle(color: Colors.black,),),),
+                              Tab(child: Text('Test Area 2', style: TextStyle(color: Colors.black,),),),
+                              Tab(child: Text('Test Area 3', style: TextStyle(color: Colors.black,),),),
+                              Tab(child: Text('test dining 2', style: TextStyle(color: Colors.black,),),),
+                              Tab(child: Text('test patio 2', style: TextStyle(color: Colors.black,),),),
+                              Tab(child: Text('test 23', style: TextStyle(color: Colors.black,),),),
+                              Tab(child: Text('test 34', style: TextStyle(color: Colors.black,),),),
+                              Tab(child: Text('testoffice', style: TextStyle(color: Colors.black,),),),
+                              Tab(child: Text('testt123', style: TextStyle(color: Colors.black,),),),
+                              Tab(child: Text('sec101', style: TextStyle(color: Colors.black,),),),
+                              Tab(child: Text('f34', style: TextStyle(color: Colors.black,),),),
+                              Tab(child: Text('Dining area 2', style: TextStyle(color: Colors.black,),),),
+                              Tab(child: Text('TaBLE 4', style: TextStyle(color: Colors.black,),),),
+                              Tab(child: Text('bc123', style: TextStyle(color: Colors.black,),),),
+                              Tab(child: Text('1234', style: TextStyle(color: Colors.black,),),),
+                            ],
+                          ),
+                          Expanded(
+                            child: TabBarView(
+                              children: [
+                                GridView.builder(
+                                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                                    crossAxisCount: 3,
+                                    crossAxisSpacing: 1.0, // Adjust the cross axis spacing
+                                    mainAxisSpacing: 1.0,// Adjust the cross axis count as needed
+                                  ),
+                                  itemCount: 4, // Adjust the itemCount based on the number of ProfileWidgets
+                                  itemBuilder: (BuildContext context, int index) {
+                                    // List of names for ProfileWidgets
+                                    List<String> names = ['Test Jhon', 'Test', 'Jhon', 'Testfd'];
 
-            ],
+                                    return DiningprofileWidget(
+                                      name: names[index], // Get the name from the list based on the index
+                                      level: '2',
+                                    );
+                                  },
+                                ),
+                                Container(child: Center(child: Text('Content for Backyard'),),),
+                                Container(child: Center(child: Text('Content for Patio'),),),
+                                Container(child: Center(child: Text('Content for Bar & More'),),),
+                                Container(child: Center(child: Text('Content for Test Area'),),),
+                                Container(child: Center(child: Text('Content for Test Dining'),),),
+                                Container(child: Center(child: Text('Content for Test Section 1'),),),
+                                Container(child: Center(child: Text('Content for Test Room'),),),
+                                Container(child: Center(child: Text('Content for Test Ned'),),),
+                                Container(child: Center(child: Text('Content for Test Area 2'),),),
+                                Container(child: Center(child: Text('Content for Test Area 3'),),),
+                                Container(child: Center(child: Text('Content for test dining 2'),),),
+                                Container(child: Center(child: Text('Content for test patio 2'),),),
+                                Container(child: Center(child: Text('Content for test 23'),),),
+                                Container(child: Center(child: Text('Content for test 34'),),),
+                                Container(child: Center(child: Text('Content for testoffice'),),),
+                                Container(child: Center(child: Text('Content for testt123'),),),
+                                Container(child: Center(child: Text('Content for sec101'),),),
+                                Container(child: Center(child: Text('Content for f34'),),),
+                                Container(child: Center(child: Text('Content for Dining area 2'),),),
+                                Container(child: Center(child: Text('Content for TaBLE 4'),),),
+                                Container(child: Center(child: Text('Content for bc123'),),),
+                                Container(child: Center(child: Text('Content for 1234'),),),
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+              ],
+            ),
           )
         ],
       ),
