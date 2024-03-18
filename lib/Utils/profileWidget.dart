@@ -77,16 +77,6 @@ class ProfileWidget extends StatelessWidget {
                   ],
                 ),
               ),
-              // Text below the icon
-              // Text(
-              //   '$name\n$level',
-              //   style: const TextStyle(
-              //     fontSize: 10,
-              //     fontWeight: FontWeight.bold,
-              //     color: Colors.black,
-              //   ),
-              //   textAlign: TextAlign.center,
-              // ),
             ],
           ),
         ),
@@ -176,16 +166,6 @@ class DiningprofileWidget extends StatelessWidget {
                   ],
                 ),
               ),
-              // Text below the icon
-              // Text(
-              //   '$name\n$level',
-              //   style: const TextStyle(
-              //     fontSize: 10,
-              //     fontWeight: FontWeight.bold,
-              //     color: Colors.black,
-              //   ),
-              //   textAlign: TextAlign.center,
-              // ),
             ],
           ),
         ),
